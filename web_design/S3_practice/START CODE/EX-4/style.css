@@ -1,0 +1,28 @@
+img {
+    border-radius: 100%;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    padding: auto;
+}
+
+h2 {
+  font-weight: bold;
+  text-align: center;
+}
+
+table {
+  align: center;
+  padding: auto;
+  margin: auto;
+}
+
+p {
+  text-align: center;
+}
+
+button {
+  text-align: center;
+  border: 10px;
+  border-radius: 20px solid;
+}
