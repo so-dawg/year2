@@ -1,0 +1,9 @@
+button {
+  background-color: red;
+  border-color: darkred;
+}
+
+button:hover {
+  background-color: orange;
+  border-color: darkorange;
+}
