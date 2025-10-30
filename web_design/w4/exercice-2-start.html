@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .main {
+        display: flex;
+        height: 100vh;
+        background: #25384b; /* dark blue sides */
+        justify-content: center;
+        align-items: center;
+        gap: 3em;
+      }
+
+      .left-section {
+        background: #a3cfcc; /* teal */
+        flex: 1;
+        height: 80%;
+        margin-left: 3em;
+        margin-right: 3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .right-section {
+        background: #f7cfb6; /* light orange */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1em;
+        gap: 1em;
+        margin-right: 3em;
+      }
+
+      .item {
+        background: #86c2de; /* light blue boxes */
+        width: 10em;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <section class="left-section">
+        <span style="font-size: 2em;">⇔</span>
+      </section>
+      <section class="right-section">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </section>
+    </div>
+  </body>
+</html>
+
