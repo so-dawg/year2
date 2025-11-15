@@ -1,0 +1,52 @@
+.container{
+  display: grid;
+  gap: 20px;
+  background: white;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+img{
+  height: 300px;
+  width: 300px;
+  border-radius: 30px;
+}
+
+h2{
+  margin-left: 10px;
+}
+
+p{
+  margin-left: 10px;
+}
+
+.item{
+  border: solid 5px;
+  border-radius: 30px;
+  background: grey;
+}
+
+#home{
+  grid-row: 1/2;
+  grid-column: 1/4;
+}
+
+#head1{
+  font-weight: bold;
+  font-size: 150px;
+}
+
+#sale{
+  grid-row: 2/4;
+  grid-column: 1/2;
+}
+
+#event{
+  grid-row: 3;
+  grid-column: 2/4;
+}
+
+#buttom{
+  grid-column: 1/4;
+}
+
