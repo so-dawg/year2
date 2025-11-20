@@ -1,7 +1,7 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-const char* ssid = "Weeeewonder Coffee";
+const char* ssid = "WiFi";
 const char* password = "12345678";
 
 // CallMeBot Settings
