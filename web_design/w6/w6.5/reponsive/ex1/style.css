@@ -1,0 +1,44 @@
+/* Base styling */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   /* 3 columns for large screens */
+    gap: 15px;
+}
+
+/* Grid items */
+.item {
+    background: #a8d8e6;
+    padding: 20px;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Medium Screens: max-width 1000px → 2 columns */
+@media (max-width: 1000px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets / Small Devices: max-width 768px → 2 columns (same as above but may adjust spacing) */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+/* Mobile: max-width 480px → 1 column */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}

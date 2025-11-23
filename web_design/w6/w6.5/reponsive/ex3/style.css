@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+aside {
+    background-color: #ddd;
+    padding: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Medium Screens (600px to 900px) */
+@media (min-width: 600px) {
+    .container {
+        flex-direction: row;
+    }
+
+    main {
+        flex: 1;
+    }
+
+    aside {
+        flex: 0 0 30%; /* Sidebar takes about 30% width */
+    }
+
+    header, footer {
+        padding: 15px; /* Slightly enlarged */
+    }
+}
+
+/* Large Screens (900px and wider) */
+@media (min-width: 900px) {
+    .container {
+        flex-direction: row;
+    }
+
+    main {
+        flex: 2; /* Content takes more space */
+    }
+
+    aside {
+        flex: 1; /* Sidebar shrinks a little */
+    }
+
+    header, footer {
+        padding: 20px; /* More padding */
+        font-size: 1.2em; /* Larger text */
+    }
+}

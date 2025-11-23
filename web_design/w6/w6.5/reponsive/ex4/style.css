@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: clamp(300px, 100%, 800px);
+    height: 300px; /* Arbitrary height to visualize the box */
+    background-color: limegreen; /* Green box as described */
+}
+
+/* Example media query for additional responsiveness if needed */
+@media (max-width: 600px) {
+    .content {
+        background-color: yellow; /* Change color on small screens for demonstration */
+    }
+}
