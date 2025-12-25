@@ -46,7 +46,8 @@
 
       <nav class="mt-6">
         <ul class="space-y-4">
-          <li><a href="dashboard.html" class="block font-semibold flex items-center"><span class="sidebar-text">Dashboard</span></a></li>
+          <li><a href="dashboard.html" class="block font-semibold flex items-center"><span
+                class="sidebar-text">Dashboard</span></a></li>
           <li><a href="course.html" class="block flex items-center"><span class="sidebar-text">Course</span></a></li>
           <li><a href="project.html" class="block flex items-center"><span class="sidebar-text">Project</span></a></li>
           <li><a href="setting.html" class="block flex items-center"><span class="sidebar-text">Setting</span></a></li>
@@ -62,7 +63,6 @@
           <div id="user-info" class="hidden">
             <span id="user-name" class="text-sm font-medium"></span>
           </div>
-          <button id="logout-btn" class="text-sm font-medium text-red-600 hover:text-red-800 hidden">Logout</button>
           <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-sm font-bold">
             M
           </div>
@@ -139,7 +139,7 @@
 
   <script>
     // Check if user is logged in
-    window.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('DOMContentLoaded', function () {
       const isLoggedIn = localStorage.getItem('isLoggedIn');
       const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
@@ -155,7 +155,7 @@
     });
 
     // Handle logout
-    document.getElementById('logout-btn').addEventListener('click', function() {
+    document.getElementById('logout-btn').addEventListener('click', function () {
       // Clear login state
       localStorage.removeItem('isLoggedIn');
       localStorage.removeItem('currentUser');
