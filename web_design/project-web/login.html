@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SO-DAWG</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'custom-green': '#16a34a'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="min-h-screen bg-gray-50 flex flex-col">
+  <!-- Header -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="login.html" class="text-2xl font-bold text-gray-900">SO-DAWG</a>
+        </div>
+        <!-- Center Navigation -->
+        <nav class="hidden md:flex space-x-8 items-center">
+          <a href="about.html" class="text-gray-700 hover:text-gray-900">About</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900 scroll-to-footer">Contact</a>
+          <a href="about.html#feature-section" class="text-gray-700 hover:text-gray-900">Feature</a>
+        </nav>
+        <!-- Right Side Items -->
+        <div class="flex items-center space-x-4">
+          <!-- Login Button -->
+          <div class="hidden md:flex items-center">
+            <a href="login2.html" class="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800">Login</a>
+          </div>
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button id="menu-button" class="text-gray-700">
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
+        <a href="about.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">About</a>
+        <a href="#"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 scroll-to-footer-mobile">Contact</a>
+        <a href="about.html#feature-section"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">Feature</a>
+        <a href="login2.html"
+          class="block px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-cover bg-center">
+    <div class="max-w-3xl w-full text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Get better everyday with us.</h2>
+      <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <input type="email" placeholder="Enter your email"
+          class="px-4 py-2 rounded-md bg-gray-100 border border-gray-300  w-full sm:w-64" />
+        <button class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">Sign up</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-gray-100 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="font-bold text-gray-900 mb-2">SO-DAWG</h3>
+          <p class="text-sm text-gray-600">SO-DAWG is learning website for students and teacher make course or project
+            efficient also effect in work.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-gray-900 mb-2">Contact</h3>
+          <p class="text-sm text-gray-600 flex items-center mb-1">
+            <i class="fas fa-envelope text-red-500 mr-1"></i>
+            meychansopheaktra@gmail.com
+          </p>
+          <p class="text-sm text-gray-600 flex items-center mb-1">
+            <i class="fas fa-phone text-red-500 mr-1"></i>
+            +85561392687
+          </p>
+          <p class="text-sm text-gray-600">
+            189, Preah Ang Yukanthor Street (19), Phnom Penh, Cambodia
+          </p>
+        </div>
+        <div>
+          <h3 class="font-bold text-gray-900 mb-2">Follow us</h3>
+          <p class="text-sm text-gray-600">Connected with us on social media for news</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-button').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Scroll to footer functionality for desktop
+    document.querySelectorAll('.scroll-to-footer').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const footer = document.getElementById('footer');
+        footer.scrollIntoView({behavior: 'smooth'});
+      });
+    });
+
+    // Scroll to footer functionality for mobile
+    document.querySelectorAll('.scroll-to-footer-mobile').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        // Close mobile menu first
+        document.getElementById('mobile-menu').classList.add('hidden');
+        // Then scroll to footer
+        const footer = document.getElementById('footer');
+        footer.scrollIntoView({behavior: 'smooth'});
+      });
+    });
+
+    // Check if we need to scroll to feature section on page load
+    window.addEventListener('DOMContentLoaded', (event) => {
+      if (window.location.hash === '#feature-section') {
+        // We'll need to redirect to about.html with the hash
+        // For now, just scroll to the top if this page was loaded with the feature hash
+      }
+    });
+  </script>
+</body>
+
+</html>

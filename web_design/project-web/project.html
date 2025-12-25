@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const hamburger = document.getElementById('hamburger');
+      const sidebarContent = document.getElementById('sidebar-content');
+      const sidebarTexts = document.querySelectorAll('.sidebar-text');
+      const isClosed = sidebar.classList.contains('w-16');
+
+      if (isClosed) {
+        sidebar.classList.remove('w-16');
+        sidebar.classList.add('w-64');
+        sidebarContent.classList.remove('hidden');
+        hamburger.innerHTML = '☰';
+        // Show text elements
+        sidebarTexts.forEach(text => {
+          text.classList.remove('hidden');
+        });
+      } else {
+        sidebar.classList.remove('w-64');
+        sidebar.classList.add('w-16');
+        sidebarContent.classList.add('hidden');
+        hamburger.innerHTML = '☰';
+        // Hide text elements
+        sidebarTexts.forEach(text => {
+          text.classList.add('hidden');
+        });
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-white text-gray-800">
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <div id="sidebar" class="w-64 bg-white border-r border-gray-200 p-4 transition-all duration-300 ease-in-out">
+      <div class="mb-6">
+        <button id="hamburger" onclick="toggleSidebar()" class="p-2 rounded-md hover:bg-gray-100">
+          ☰
+        </button>
+      </div>
+      <div id="sidebar-content" class="flex-1">
+        <nav class="mt-6">
+          <ul class="space-y-4">
+            <li><a href="dashboard.html" class="block flex items-center"><span class="sidebar-text">Dashboard</span></a></li>
+            <li><a href="course.html" class="block flex items-center"><span class="sidebar-text">Course</span></a></li>
+            <li><a href="project.html" class="block font-semibold flex items-center"><span class="sidebar-text">Project</span></a></li>
+            <li><a href="setting.html" class="block flex items-center"><span class="sidebar-text">Setting</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-xl font-bold">Project</h1>
+        <div class="flex items-center space-x-4">
+          <div id="user-info" class="hidden">
+            <span id="user-name" class="text-sm font-medium"></span>
+          </div>
+          <button id="logout-btn" class="text-sm font-medium text-red-600 hover:text-red-800 hidden">Logout</button>
+          <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-sm font-bold">
+            M
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Elden Ring 2 Project Card -->
+        <div class="bg-gray-200 rounded-lg p-4">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="font-bold">Elden Ring 2</h2>
+            <div class="flex items-center space-x-2">
+              <span>+</span>
+              <button class="bg-green-600 text-white px-3 py-1 rounded text-sm">Clone</button>
+            </div>
+          </div>
+          <div class="space-y-2 text-sm">
+            <div>index.html</div>
+            <div>style.css</div>
+            <div>main.js</div>
+          </div>
+        </div>
+
+        <!-- Sekiro Project Card -->
+        <div class="bg-gray-200 rounded-lg p-4">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="font-bold">Sekiro</h2>
+            <div class="flex items-center space-x-2">
+              <span>+</span>
+              <button class="bg-green-600 text-white px-3 py-1 rounded text-sm">Clone</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Check if user is logged in
+    window.addEventListener('DOMContentLoaded', function() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+      if (isLoggedIn === 'true' && currentUser) {
+        // Show user info and logout button
+        document.getElementById('user-info').classList.remove('hidden');
+        document.getElementById('logout-btn').classList.remove('hidden');
+        document.getElementById('user-name').textContent = currentUser.name || currentUser.email;
+      } else {
+        // Redirect to login if not logged in
+        window.location.href = 'login2.html';
+      }
+    });
+
+    // Handle logout
+    document.getElementById('logout-btn').addEventListener('click', function() {
+      // Clear login state
+      localStorage.removeItem('isLoggedIn');
+      localStorage.removeItem('currentUser');
+      localStorage.removeItem('rememberMe');
+
+      // Redirect to login
+      window.location.href = 'login2.html';
+    });
+  </script>
+</body>
+
+</html>

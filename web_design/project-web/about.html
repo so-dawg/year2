@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SO-DAWG - About Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-white">
+  <!-- Header -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="login.html" class="text-2xl font-bold text-gray-900">SO-DAWG</a>
+        </div>
+        <!-- Center Navigation -->
+        <nav class="hidden md:flex space-x-8 items-center">
+          <a href="about.html" class="text-gray-700 hover:text-gray-900">About</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900 scroll-to-footer">Contact</a>
+          <a href="#feature-section" class="text-gray-700 hover:text-gray-900">Feature</a>
+        </nav>
+        <!-- Right Side Items -->
+        <div class="flex items-center space-x-4">
+          <!-- Login Button (shown when not logged in) -->
+          <div id="login-btn-container" class="hidden md:flex items-center">
+            <a href="login2.html" class="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800">Login</a>
+          </div>
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button id="menu-button" class="text-gray-700">
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
+        <a href="about.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">About</a>
+        <a href="#"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 scroll-to-footer-mobile">Contact</a>
+        <a href="#feature-section"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">Feature</a>
+        <a href="login2.html"
+          class="block px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Us Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">About us</h2>
+      <p class="max-w-3xl mx-auto text-gray-600">
+        Our mission is to bring students a more convenient solution about project collaboration as team and better
+        platform for students and teacher to work together. This website is bring all the tools together all in one
+        place.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature Section -->
+  <section id="feature-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Feature</h2>
+    </div>
+
+    <!-- Git and Productive Section -->
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="flex flex-col items-center">
+        <div class="bg-gray-200 rounded-lg w-full h-64 flex items-center justify-center">
+          <p class="text-gray-500">Git Image Placeholder</p>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 mt-4">Git</h3>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="bg-gray-200 rounded-lg w-full h-64 flex items-center justify-center">
+          <p class="text-gray-500">Productive Image Placeholder</p>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 mt-4">Productive</h3>
+      </div>
+    </div>
+
+    <!-- Course Section -->
+    <div class="bg-gray-100 rounded-lg p-6 mb-8">
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="bg-gray-200 rounded-lg w-full md:w-48 h-32 flex items-center justify-center">
+          <p class="text-gray-500 text-center">Course Image</p>
+        </div>
+        <div class="flex-1 text-center md:text-left">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Course</h3>
+          <p class="text-gray-600 mb-4">
+            Join course online by IO. Complete assignment. Our course is designed to give students practical, hands-on
+            skills they can use immediately. Through clear lessons, real-world examples, and guided projects, learners
+            will build a strong foundation while gaining confidence in their abilities.
+          </p>
+          <button class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition">Join
+            Course</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Section -->
+    <div class="bg-gray-100 rounded-lg p-6 mb-8">
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="bg-gray-200 rounded-lg w-full md:w-48 h-32 flex items-center justify-center">
+          <p class="text-gray-500 text-center">Project Image</p>
+        </div>
+        <div class="flex-1 text-center md:text-left">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Project</h3>
+          <p class="text-gray-600 mb-4">
+            Users can browse through different works, see how each one was created, and understand the process behind
+            it.
+            The project section is organized, responsive, and easy to navigate, making it simple for visitors to
+            discover
+            what the built and how each feature contributes to the overall functionality of the website.
+          </p>
+          <button class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition">Create
+            Project</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-gray-100 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="font-bold text-gray-900 mb-2">SO-DAWG</h3>
+          <p class="text-sm text-gray-600">SO-DAWG is learning website for students and teacher make course or project
+            efficient also effect in work.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-gray-900 mb-2">Contact</h3>
+          <p class="text-sm text-gray-600 flex items-center mb-1">
+            <i class="fas fa-envelope text-red-500 mr-1"></i>
+            meychansopheaktra@gmail.com
+          </p>
+          <p class="text-sm text-gray-600 flex items-center mb-1">
+            <i class="fas fa-phone text-red-500 mr-1"></i>
+            +85561392687
+          </p>
+          <p class="text-sm text-gray-600">
+            189, Preah Ang Yukanthor Street (19), Phnom Penh, Cambodia
+          </p>
+        </div>
+        <div>
+          <h3 class="font-bold text-gray-900 mb-2">Follow us</h3>
+          <p class="text-sm text-gray-600">Connected with us on social media for news</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-button').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Scroll to footer functionality for desktop
+    document.querySelectorAll('.scroll-to-footer').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const footer = document.getElementById('footer');
+        footer.scrollIntoView({behavior: 'smooth'});
+      });
+    });
+
+    // Scroll to footer functionality for mobile
+    document.querySelectorAll('.scroll-to-footer-mobile').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        // Close mobile menu first
+        document.getElementById('mobile-menu').classList.add('hidden');
+        // Then scroll to footer
+        const footer = document.getElementById('footer');
+        footer.scrollIntoView({behavior: 'smooth'});
+      });
+    });
+
+    // Check if we need to scroll to feature section on page load
+    window.addEventListener('DOMContentLoaded', (event) => {
+      if (window.location.hash === '#feature-section') {
+        setTimeout(() => {
+          const featureSection = document.getElementById('feature-section');
+          if (featureSection) {
+            featureSection.scrollIntoView({behavior: 'smooth'});
+          }
+        }, 100); // Small delay to ensure page is loaded
+      }
+    });
+
+    // Check if user is logged in and update UI accordingly
+    window.addEventListener('DOMContentLoaded', function () {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+      if (isLoggedIn === 'true' && currentUser) {
+        // Show user info and hide login button
+        document.getElementById('user-info').classList.remove('hidden');
+        document.getElementById('login-btn-container').classList.add('hidden');
+        document.getElementById('user-name').textContent = currentUser.name || currentUser.email;
+      } else {
+        // Show login button and hide user info
+        document.getElementById('user-info').classList.add('hidden');
+        document.getElementById('login-btn-container').classList.remove('hidden');
+      }
+    });
+
+    // Handle logout
+    document.getElementById('logout-btn').addEventListener('click', function () {
+      // Clear login state
+      localStorage.removeItem('isLoggedIn');
+      localStorage.removeItem('currentUser');
+      localStorage.removeItem('rememberMe');
+
+      // Redirect to login
+      window.location.href = 'login2.html';
+    });
+  </script>
+</body>
+
+</html>

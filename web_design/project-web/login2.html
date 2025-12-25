@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - SO-DAWG</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'custom-green': '#16a34a'
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+            .login-bg {
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen login-bg flex items-center justify-center p-4">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden">
+    <div class="p-8">
+      <div class="text-center mb-8">
+        <div class="inline-block p-3 bg-green-50 rounded-full mb-4">
+          <h1 class="text-2xl font-bold text-green-600">SO-DAWG</h1>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-900">Welcome back</h2>
+        <p class="text-gray-500 mt-1">Sign in to continue your learning journey</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="mb-6">
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <i class="fas fa-envelope text-gray-400"></i>
+            </div>
+            <input type="email" id="email"
+              class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              placeholder="your@email.com" required>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <i class="fas fa-lock text-gray-400"></i>
+            </div>
+            <input type="password" id="password"
+              class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              placeholder="••••••••" required>
+          </div>
+          <div class="flex justify-between mt-1">
+            <div class="flex items-center">
+              <input type="checkbox" id="remember" class="h-4 w-4 text-green-600 rounded focus:ring-green-500">
+              <label for="remember" class="ml-2 text-sm text-gray-600">Remember me</label>
+            </div>
+            <a href="#" class="text-sm font-medium text-green-600 hover:text-green-700">Forgot password?</a>
+          </div>
+        </div>
+
+        <button type="submit"
+          class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-4 rounded-lg transition duration-200 shadow-md hover:shadow-lg">
+          Sign In
+        </button>
+
+        <div class="mt-6 text-center">
+          <p class="text-gray-600">Don't have an account? <a href="#"
+              class="font-medium text-green-600 hover:text-green-700">Sign up</a></p>
+        </div>
+      </form>
+    </div>
+
+    <div class="px-8 py-4 bg-gray-50 border-t border-gray-200">
+      <div class="flex items-center justify-center space-x-4">
+        <button
+          class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors">
+          <i class="fab fa-google text-lg text-gray-700"></i>
+        </button>
+        <button
+          class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors">
+          <i class="fab fa-facebook text-lg text-gray-700"></i>
+        </button>
+        <button
+          class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors">
+          <i class="fab fa-github text-lg text-gray-700"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-4 text-center text-gray-300 text-sm">
+    <p>© 2025 SO-DAWG. All lefts reserved.</p>
+  </div>
+
+  <script>
+    // Clear any existing login state when loading login page
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('rememberMe');
+
+    // Demo user credentials
+    const demoUser = {
+      email: 'whatever@example.com',
+      password: 'password',
+      name: 'User'
+    };
+
+    // Store demo user in localStorage if not already present
+    localStorage.setItem('demoUser', JSON.stringify(demoUser));
+
+    // Handle regular form login
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const rememberMe = document.getElementById('remember').checked;
+
+      // Get stored user data
+      const storedUser = JSON.parse(localStorage.getItem('demoUser'));
+
+      // Simple validation
+      if (email === storedUser.email && password === storedUser.password) {
+        // Store login state
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('currentUser', JSON.stringify({
+          email: email,
+          name: storedUser.name
+        }));
+
+        if (rememberMe) {
+          localStorage.setItem('rememberMe', 'true');
+        } else {
+          localStorage.removeItem('rememberMe');
+        }
+
+        // Redirect to dashboard
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('Invalid email or password. Use admin@example.com with password admin123');
+      }
+    });
+
+    // Check if user is already logged in
+    window.addEventListener('DOMContentLoaded', function () {
+      if (localStorage.getItem('isLoggedIn') === 'true') {
+        window.location.href = 'dashboard.html';
+      }
+    });
+  </script>
+</body>
+
+</html>
