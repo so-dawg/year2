@@ -107,6 +107,7 @@ function renderScore() {
   dom_score.textContent = scorePercent;
   hide(dom_quiz);
   show(dom_score);
+
 }
 
 // FUNCTIONS ---------------------------------------------------------
