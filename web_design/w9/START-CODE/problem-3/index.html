@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Problem-1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind (Offline) -->
+  <script src="../tailwind-browser.js"></script>
+  <script>
+    function para1() {
+      document.getElementById('para').textContent = `nsdjansdanwkdnakwndaklwdnkanwdanwkdanwkd`;
+    }
+
+    function para2() {
+      document.getElementById('para').textContent = `this me hi`;
+    }
+
+    function para3() {
+      document.getElementById('para').textContent = `what's up?`;
+    }
+  </script>
+</head>
+
+<body>
+  <div class="min-h-screen bg-gray-700 flex items-center justify-center p-4">
+    <div class="w-[450px] bg-white rounded-[20px] shadow-xl overflow-hidden">
+
+      <div class="h-[430px] w-[430px] bg-gray-400 rounded-lg m-2">
+      </div>
+
+      <div class="flex items-center text-sm space-x-4 font-semibold">
+        <button type="button" class="m-auto p-1" onclick="para1()">para 1</button>
+        <button type="button" class="m-auto p-1" onclick="para2()">para 2</button>
+        <button type="button" class="m-auto p-1" onclick="para3()">para 3</button>
+      </div>
+
+      <p id="para" class="m-auto p-1 font-medium">anksndakn</p>
+</body>
+
+</html>
