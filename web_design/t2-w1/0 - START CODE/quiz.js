@@ -48,7 +48,6 @@ let score = 0;
 
 // FUNCTIONS ---------------------------------------------------------
 
-// Hide a given element
 function hide(element) {
   element.style.display = 'none';
 }
@@ -58,15 +57,12 @@ function show(element) {
 }
 
 function onStart() {
-  // Reset score and question index
   score = 0;
   runningQuestionIndex = 0;
 
-  // Hide start screen and show quiz
   hide(dom_start);
   show(dom_quiz);
 
-  // Render the first question
   renderQuestion();
 }
 
@@ -86,24 +82,18 @@ function onPlayerSubmit(answer) {
     score++;
   }
 
-  // Move to the next question
   runningQuestionIndex++;
 
-  // Check if there are more questions
   if (runningQuestionIndex < questions.length) {
-    // Render the next question
     renderQuestion();
   } else {
-    // No more questions, show the score
     renderScore();
   }
 }
 
 function renderScore() {
-  // Calculate the percentage score
   const scorePercent = Math.round((score / questions.length) * 100);
 
-  // Hide quiz and show score
   dom_score.textContent = scorePercent;
   hide(dom_quiz);
   show(dom_score);
