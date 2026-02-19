@@ -1,0 +1,42 @@
+export const TEAM_MEMBERS = [
+  {
+    id: "m1",
+    name: "Sarah Chen",
+    role: "Frontend Developer",
+    image: { src: "https://picsum.photos/seed/sarah/400/400", alt: "Sarah Chen profile picture" },
+    hobbies: ["Photography", "Hiking", "Coffee brewing"],
+    location: "San Francisco, CA",
+  },
+  {
+    id: "m2",
+    name: "Marcus Johnson",
+    role: "Backend Engineer",
+    image: { src: "https://picsum.photos/seed/marcus/400/400", alt: "Marcus Johnson profile picture" },
+    hobbies: ["Gaming", "Cooking", "Cycling"],
+    location: "Austin, TX",
+  },
+  {
+    id: "m3",
+    name: "Emily Rodriguez",
+    role: "UX Designer",
+    image: { src: "https://picsum.photos/seed/emily/400/400", alt: "Emily Rodriguez profile picture" },
+    hobbies: ["Drawing", "Yoga", "Travel"],
+    location: "New York, NY",
+  },
+  {
+    id: "m4",
+    name: "David Kim",
+    role: "DevOps Engineer",
+    image: { src: "https://picsum.photos/seed/david/400/400", alt: "David Kim profile picture" },
+    hobbies: ["Music production", "Running", "Board games"],
+    location: "Seattle, WA",
+  },
+  {
+    id: "m5",
+    name: "Priya Patel",
+    role: "Full Stack Developer",
+    image: { src: "https://picsum.photos/seed/priya/400/400", alt: "Priya Patel profile picture" },
+    hobbies: ["Reading", "Gardening", "Baking"],
+    location: "London, UK",
+  },
+];
