@@ -1,9 +1,9 @@
 import React from "react";
-import iheader from "./header";
+import Header from "./header";
 function App() {
   return (
     <>
-      <iheader />
+      <Header />
       <main className="block">
         <p>
           React (also known as React.js or ReactJS) is a free and open-source
